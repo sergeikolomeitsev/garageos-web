@@ -184,6 +184,52 @@
     .role-list li.no::before { content: "✗"; color: var(--label3); }
     .role-list li.no { color: var(--label3); }
 
+    /* ── PERMISSIONS TABLE ── */
+    .perm-table-wrap { overflow-x: auto; margin-top: 40px; }
+    .perm-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 14px;
+    }
+    .perm-table th, .perm-table td {
+      padding: 11px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .perm-table thead th {
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--label2);
+      background: var(--surface);
+    }
+    .perm-table thead th:first-child { border-radius: var(--radius) 0 0 0; }
+    .perm-table thead th:last-child  { border-radius: 0 var(--radius) 0 0; }
+    .perm-table tbody tr:last-child td { border-bottom: none; }
+    .perm-table tbody tr:hover { background: var(--surface2); }
+    .perm-table td:first-child { color: var(--text); font-weight: 500; }
+    .yes { color: var(--accent-light); font-weight: 600; }
+    .pt-no { color: var(--label3); }
+
+    /* ── INVITE FLOW ── */
+    .invite-flow {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-top: 40px;
+    }
+    .invite-flow-title { font-size: 15px; font-weight: 600; margin-bottom: 20px; }
+    .invite-steps { display: flex; flex-direction: column; gap: 14px; }
+    .invite-step { display: flex; gap: 14px; align-items: flex-start; }
+    .invite-step-num {
+      width: 26px; height: 26px; flex-shrink: 0;
+      background: var(--accent-dim); border: 1px solid var(--accent-border);
+      color: var(--accent-light); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700;
+    }
+    .invite-step-text { font-size: 14px; color: var(--label2); line-height: 1.55; padding-top: 3px; }
+    .invite-step-text strong { color: var(--text); }
+
     /* ── STEPS ── */
     .steps { display: flex; flex-direction: column; }
     .step {
@@ -353,6 +399,7 @@
       <div class="role-desc">Приём клиентов и ведение записи.</div>
       <ul class="role-list">
         <li>Создание и ведение заявок</li>
+        <li>Назначение мастера на заявку</li>
         <li>База клиентов</li>
         <li>Расписание записи</li>
         <li>Просмотр программы лояльности</li>
@@ -371,10 +418,67 @@
         <li class="no">Имя и телефон клиента скрыты</li>
         <li class="no">Создание заявок</li>
         <li class="no">База клиентов</li>
+        <li class="no">Назначение мастеров</li>
       </ul>
     </div>
 
   </div>
+
+  <!-- Таблица прав -->
+  <div class="perm-table-wrap">
+    <table class="perm-table">
+      <thead>
+        <tr>
+          <th>Функция</th>
+          <th>👑 Владелец</th>
+          <th>🗂 Приёмщик</th>
+          <th>🛠 Мастер</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Создание заявок</td><td class="yes">✓</td><td class="yes">✓</td><td class="pt-no">✗</td></tr>
+        <tr><td>Просмотр всех заявок</td><td class="yes">✓</td><td class="yes">✓</td><td class="pt-no">✗</td></tr>
+        <tr><td>Назначение мастера на заявку</td><td class="yes">✓</td><td class="yes">✓</td><td class="pt-no">✗</td></tr>
+        <tr><td>Просмотр своих заявок</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Обновление статуса и фото</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Имя и телефон клиента</td><td class="yes">✓</td><td class="yes">✓</td><td class="pt-no">✗ скрыто</td></tr>
+        <tr><td>База клиентов</td><td class="yes">✓</td><td class="yes">✓</td><td class="pt-no">✗</td></tr>
+        <tr><td>Расписание записи</td><td class="yes">✓</td><td class="yes">✓</td><td class="pt-no">✗</td></tr>
+        <tr><td>Программа лояльности</td><td class="yes">✓ управление</td><td class="yes">✓ просмотр</td><td class="pt-no">✗</td></tr>
+        <tr><td>Напоминания клиентам</td><td class="yes">✓</td><td class="pt-no">✗</td><td class="pt-no">✗</td></tr>
+        <tr><td>Управление персоналом</td><td class="yes">✓</td><td class="pt-no">✗</td><td class="pt-no">✗</td></tr>
+        <tr><td>Настройки сервиса</td><td class="yes">✓</td><td class="pt-no">✗</td><td class="pt-no">✗</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Как добавить сотрудника -->
+  <div class="invite-flow">
+    <div class="invite-flow-title">Как добавить сотрудника в команду</div>
+    <div class="invite-steps">
+      <div class="invite-step">
+        <div class="invite-step-num">1</div>
+        <div class="invite-step-text">Владелец открывает раздел <strong>Персонал</strong> → нажимает <strong>«Добавить»</strong> и указывает имя, email и роль сотрудника.</div>
+      </div>
+      <div class="invite-step">
+        <div class="invite-step-num">2</div>
+        <div class="invite-step-text">Сотруднику автоматически приходит письмо с <strong>6-значным кодом подтверждения</strong> (действует 15 минут) и названием сервиса.</div>
+      </div>
+      <div class="invite-step">
+        <div class="invite-step-num">3</div>
+        <div class="invite-step-text">Сотрудник устанавливает GarageOS из App Store, открывает приложение и вводит свой <strong>email</strong>.</div>
+      </div>
+      <div class="invite-step">
+        <div class="invite-step-num">4</div>
+        <div class="invite-step-text">Приложение просит ввести <strong>код из письма</strong>, затем задать собственный пароль.</div>
+      </div>
+      <div class="invite-step">
+        <div class="invite-step-num">5</div>
+        <div class="invite-step-text">Готово — сотрудник входит с нужной ролью. При последующих входах используется <strong>email и пароль</strong>.</div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- GETTING STARTED -->
@@ -393,22 +497,22 @@
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-body">
-        <h3>Зарегистрируйтесь</h3>
-        <p>Введите имя, email и пароль. Если у вас есть инвайт-код от вашего сервиса — введите его в поле «Инвайт-код (если есть)». Это поле необязательное.</p>
+        <h3>Зарегистрируйтесь как владелец</h3>
+        <p>Введите email — если он новый, приложение попросит имя. Затем придёт письмо с 6-значным кодом подтверждения. Введите код и установите пароль.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <div class="step-body">
-        <h3>Выберите тариф или активируйте код</h3>
-        <p>После регистрации откроется экран подписки. Выберите подходящий тариф — оплата через Apple In-App Purchases. Если у вас есть код активации от нас — введите его на этом же экране.</p>
+        <h3>Настройте сервис</h3>
+        <p>Укажите название сервиса, адрес и при желании токен Telegram-бота — через него клиенты смогут записываться и получать уведомления.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">4</div>
       <div class="step-body">
-        <h3>Пригласите сотрудников</h3>
-        <p>Владелец создаёт инвайт-коды для мастеров и приёмщиков в разделе «Персонал». Каждый сотрудник вводит свой код при регистрации и получает доступ согласно роли.</p>
+        <h3>Добавьте сотрудников</h3>
+        <p>В разделе «Персонал» добавьте мастеров и приёмщиков по email. Каждый получит письмо с кодом для первого входа. Подробнее — в блоке «Роли» выше.</p>
       </div>
     </div>
     <div class="step">
@@ -550,7 +654,8 @@
   <details>
     <summary>Как получить доступ к GarageOS?</summary>
     <div class="faq-body">
-      <p>Скачайте приложение из App Store, зарегистрируйтесь и выберите тариф — всё самостоятельно, без ожидания. Если ваш сервис уже использует GarageOS, владелец может выдать вам инвайт-код для входа с нужной ролью.</p>
+      <p><strong>Если вы владелец сервиса:</strong> скачайте приложение из App Store, введите email — придёт письмо с кодом подтверждения. Введите код, установите пароль и настройте сервис.</p>
+      <p><strong>Если вы мастер или приёмщик:</strong> владелец добавляет вас по email в разделе «Персонал». Вы получите письмо с 6-значным кодом. Откройте приложение, введите email, затем код — и установите пароль.</p>
       <p>По любым вопросам пишите на <a href="mailto:support@kolomeitsevs.com">support@kolomeitsevs.com</a>.</p>
     </div>
   </details>
@@ -565,7 +670,29 @@
   <details>
     <summary>Как добавить нового сотрудника?</summary>
     <div class="faq-body">
-      <p>Войдите как Владелец → Настройки → Персонал. Создайте инвайт-код с нужной ролью и сроком действия. Сотрудник вводит этот код при первом входе в приложение.</p>
+      <p>Войдите как Владелец → раздел «Персонал» → «Добавить». Укажите имя, email и роль сотрудника. Система автоматически отправит ему письмо с 6-значным кодом для первого входа.</p>
+      <p>Сотрудник устанавливает GarageOS, вводит email, затем код из письма и устанавливает свой пароль. Код действует 15 минут.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Срок кода подтверждения истёк — что делать?</summary>
+    <div class="faq-body">
+      <p>Если 15 минут прошло, сотрудник просто снова открывает приложение и вводит свой email — система автоматически вышлет новый код на ту же почту.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Кто может назначить мастера на заявку?</summary>
+    <div class="faq-body">
+      <p>Назначить или переназначить мастера могут <strong>владелец</strong> и <strong>приёмщик</strong>. Мастер видит только уже назначенные ему заявки.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Можно ли изменить роль сотрудника?</summary>
+    <div class="faq-body">
+      <p>Чтобы изменить роль, владелец деактивирует текущий аккаунт сотрудника в разделе «Персонал» и добавляет его заново с новой ролью на тот же или другой email.</p>
     </div>
   </details>
 
@@ -607,7 +734,7 @@
   <details>
     <summary>Как оформляется подписка?</summary>
     <div class="faq-body">
-      <p>Для корпоративных клиентов (B2B) доступ предоставляется по договору через инвайт-коды. Индивидуальная подписка оформляется через Apple In-App Purchases прямо в приложении.</p>
+      <p>Новый владелец получает бесплатный пробный период после регистрации. По его окончании доступ оформляется через Apple In-App Purchases прямо в приложении. По вопросам корпоративного доступа пишите на <a href="mailto:support@kolomeitsevs.com">support@kolomeitsevs.com</a>.</p>
     </div>
   </details>
 
