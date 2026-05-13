@@ -9,15 +9,19 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0f0f0f;
-      --surface: #1a1a1a;
-      --surface2: #242424;
-      --border: #2e2e2e;
-      --accent: #f5a623;
-      --accent-dim: rgba(245,166,35,0.12);
-      --text: #e8e8e8;
-      --muted: #888;
-      --radius: 12px;
+      --bg:          #000000;
+      --surface:     #1c1c1e;
+      --surface2:    #2c2c2e;
+      --surface3:    #3a3a3c;
+      --border:      rgba(84,84,88,0.5);
+      --accent:      #2e8a4e;
+      --accent-light:#6ec989;
+      --accent-dim:  rgba(46,138,78,0.16);
+      --accent-border: rgba(46,138,78,0.35);
+      --text:        #ffffff;
+      --label2:      rgba(255,255,255,0.6);
+      --label3:      rgba(255,255,255,0.3);
+      --radius:      14px;
     }
 
     body {
@@ -28,62 +32,87 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: var(--accent); text-decoration: none; }
+    a { color: var(--accent-light); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(15,15,15,0.85);
-      backdrop-filter: blur(16px);
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
       border-bottom: 1px solid var(--border);
       padding: 0 24px;
       display: flex; align-items: center; justify-content: space-between;
       height: 60px;
     }
-    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 17px; color: var(--text); }
-    .nav-logo svg { width: 28px; height: 28px; }
-    .nav-links { display: flex; gap: 24px; font-size: 14px; color: var(--muted); }
-    .nav-links a { color: var(--muted); }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 600; font-size: 17px; color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo img {
+      width: 30px; height: 30px;
+      border-radius: 7px;
+    }
+    .nav-links { display: flex; gap: 24px; font-size: 14px; }
+    .nav-links a { color: var(--label2); }
     .nav-links a:hover { color: var(--text); text-decoration: none; }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
       text-align: center;
       padding: 96px 24px 72px;
       max-width: 680px;
       margin: 0 auto;
     }
+    .hero-logo {
+      width: 96px; height: 96px;
+      border-radius: 22px;
+      margin: 0 auto 28px;
+      display: block;
+      box-shadow: 0 0 40px rgba(46,138,78,0.35);
+    }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--accent-dim);
-      border: 1px solid rgba(245,166,35,0.3);
-      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      color: var(--accent-light);
       font-size: 13px; font-weight: 500;
       padding: 5px 14px; border-radius: 99px;
       margin-bottom: 24px;
     }
-    .hero h1 { font-size: clamp(32px, 6vw, 52px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
-    .hero h1 span { color: var(--accent); }
-    .hero p { font-size: 17px; color: var(--muted); max-width: 520px; margin: 0 auto 36px; }
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 700; letter-spacing: -0.03em; line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: var(--accent-light); }
+    .hero p { font-size: 17px; color: var(--label2); max-width: 520px; margin: 0 auto 36px; }
     .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 24px; border-radius: 10px; font-size: 15px; font-weight: 500;
+      padding: 12px 24px; border-radius: 14px; font-size: 15px; font-weight: 500;
       cursor: pointer; transition: opacity 0.15s;
     }
-    .btn:hover { opacity: 0.85; text-decoration: none; }
-    .btn-primary { background: var(--accent); color: #000; }
+    .btn:hover { opacity: 0.82; text-decoration: none; }
+    .btn-primary { background: var(--accent); color: #fff; }
     .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
 
-    /* SECTION */
+    /* ── SECTION ── */
     section { max-width: 860px; margin: 0 auto; padding: 64px 24px; }
     section + section { padding-top: 0; }
-    .section-label { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
-    .section-title { font-size: clamp(22px, 4vw, 32px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
-    .section-sub { font-size: 16px; color: var(--muted); margin-bottom: 40px; }
+    .section-label {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent-light); margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(22px, 4vw, 32px); font-weight: 700;
+      letter-spacing: -0.02em; margin-bottom: 8px;
+    }
+    .section-sub { font-size: 16px; color: var(--label2); margin-bottom: 40px; }
 
-    /* ROLES */
+    /* ── ROLES ── */
     .roles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
     .role-card {
       background: var(--surface);
@@ -93,13 +122,18 @@
     }
     .role-icon { font-size: 28px; margin-bottom: 12px; }
     .role-name { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
-    .role-desc { font-size: 14px; color: var(--muted); line-height: 1.5; }
+    .role-desc { font-size: 14px; color: var(--label2); line-height: 1.5; }
     .role-list { list-style: none; margin-top: 12px; }
-    .role-list li { font-size: 13px; color: var(--muted); padding: 3px 0; display: flex; gap: 8px; }
-    .role-list li::before { content: "✓"; color: var(--accent); flex-shrink: 0; }
+    .role-list li {
+      font-size: 13px; color: var(--label2);
+      padding: 3px 0; display: flex; gap: 8px;
+    }
+    .role-list li::before { content: "✓"; color: var(--accent-light); flex-shrink: 0; }
+    .role-list li.no::before { content: "✗"; color: var(--label3); }
+    .role-list li.no { color: var(--label3); }
 
-    /* STEPS */
-    .steps { display: flex; flex-direction: column; gap: 0; }
+    /* ── STEPS ── */
+    .steps { display: flex; flex-direction: column; }
     .step {
       display: flex; gap: 20px;
       padding: 24px 0;
@@ -109,28 +143,47 @@
     .step-num {
       width: 36px; height: 36px; flex-shrink: 0;
       background: var(--accent-dim);
-      border: 1px solid rgba(245,166,35,0.3);
-      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      color: var(--accent-light);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       font-size: 14px; font-weight: 700;
     }
     .step-body h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
-    .step-body p { font-size: 14px; color: var(--muted); }
+    .step-body p { font-size: 14px; color: var(--label2); }
     .step-body code {
       display: inline-block;
       background: var(--surface2);
       border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 2px 8px;
+      border-radius: 8px;
+      padding: 3px 10px;
       font-size: 13px;
       font-family: "SF Mono", "Fira Code", monospace;
-      color: var(--accent);
+      color: var(--accent-light);
       margin-top: 6px;
     }
 
-    /* FAQ */
-    .faq { display: flex; flex-direction: column; gap: 2px; }
+    /* ── STATUS FLOW ── */
+    .status-flow {
+      display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+      margin-top: 24px;
+    }
+    .status-chip {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 5px 14px;
+      font-size: 13px; font-weight: 500;
+      color: var(--label2);
+    }
+    .status-chip.active {
+      background: var(--accent-dim);
+      border-color: var(--accent-border);
+      color: var(--accent-light);
+    }
+    .status-arrow { color: var(--label3); font-size: 16px; }
+
+    /* ── FAQ ── */
     details {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -143,17 +196,16 @@
       font-size: 15px; font-weight: 500;
       cursor: pointer;
       list-style: none;
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 12px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
     }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; color: var(--accent); font-size: 20px; flex-shrink: 0; }
+    summary::after { content: "+"; color: var(--accent-light); font-size: 20px; flex-shrink: 0; }
     details[open] summary::after { content: "−"; }
     details[open] { background: var(--surface2); }
-    .faq-body { padding: 0 20px 18px; font-size: 14px; color: var(--muted); line-height: 1.65; }
+    .faq-body { padding: 0 20px 18px; font-size: 14px; color: var(--label2); line-height: 1.65; }
     .faq-body p + p { margin-top: 8px; }
 
-    /* CONTACT */
+    /* ── CONTACT ── */
     .contact-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -163,59 +215,57 @@
       text-align: center; gap: 16px;
     }
     .contact-card h3 { font-size: 20px; font-weight: 600; }
-    .contact-card p { font-size: 15px; color: var(--muted); max-width: 400px; }
+    .contact-card p { font-size: 15px; color: var(--label2); max-width: 400px; }
     .contact-email {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--accent-dim);
-      border: 1px solid rgba(245,166,35,0.3);
-      color: var(--accent);
-      padding: 10px 20px; border-radius: 8px;
+      border: 1px solid var(--accent-border);
+      color: var(--accent-light);
+      padding: 10px 20px; border-radius: 10px;
       font-size: 15px; font-weight: 500;
     }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
       text-align: center;
       padding: 32px 24px;
-      font-size: 13px; color: var(--muted);
+      font-size: 13px; color: var(--label3);
     }
-    footer a { color: var(--muted); }
-    footer a:hover { color: var(--text); }
+    footer a { color: var(--label3); }
+    footer a:hover { color: var(--label2); }
 
     @media (max-width: 600px) {
       .nav-links { display: none; }
       .hero { padding: 64px 24px 48px; }
       .contact-card { padding: 24px; }
+      .status-flow { gap: 6px; }
+      .status-chip { font-size: 12px; padding: 4px 10px; }
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">
-    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="28" height="28" rx="7" fill="#f5a623"/>
-      <path d="M7 14c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#000" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="14" cy="18" r="3" fill="#000"/>
-      <path d="M11 21h6" stroke="#000" stroke-width="2" stroke-linecap="round"/>
-    </svg>
+  <a class="nav-logo" href="/">
+    <img src="logo.png" alt="GarageOS" />
     GarageOS
-  </div>
+  </a>
   <div class="nav-links">
     <a href="#roles">Роли</a>
     <a href="#start">Начало работы</a>
+    <a href="#statuses">Статусы</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Контакты</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">
-    <span>📱</span> Версия 1.0 · iOS
-  </div>
+  <img src="logo.png" class="hero-logo" alt="GarageOS" />
+  <div class="hero-badge">📱 Версия 1.0 · iOS</div>
   <h1>Поддержка<br/><span>GarageOS</span></h1>
-  <p>Профессиональная система управления автосервисом. Здесь вы найдёте руководство, ответы на вопросы и контакты для помощи.</p>
+  <p>Профессиональная система управления автосервисом. Заявки, клиенты, расписание, напоминания — в одном приложении.</p>
   <div class="hero-actions">
     <a href="#start" class="btn btn-primary">Начало работы</a>
     <a href="#faq" class="btn btn-secondary">Частые вопросы</a>
@@ -228,41 +278,49 @@
   <div class="section-title">Роли в приложении</div>
   <div class="section-sub">У каждого сотрудника — своя область видимости и возможностей.</div>
   <div class="roles-grid">
+
     <div class="role-card">
       <div class="role-icon">👑</div>
       <div class="role-name">Владелец</div>
       <div class="role-desc">Полный доступ ко всему сервису.</div>
       <ul class="role-list">
-        <li>Все заявки и их статусы</li>
-        <li>База клиентов</li>
-        <li>Расписание</li>
-        <li>Управление сотрудниками</li>
+        <li>Все заявки и статусы ремонта</li>
+        <li>База клиентов и история</li>
+        <li>Расписание записи</li>
+        <li>Управление персоналом</li>
         <li>Программа лояльности</li>
+        <li>Напоминания клиентам</li>
         <li>Настройки сервиса</li>
       </ul>
     </div>
+
+    <div class="role-card">
+      <div class="role-icon">🗂</div>
+      <div class="role-name">Приёмщик</div>
+      <div class="role-desc">Приём клиентов и ведение записи.</div>
+      <ul class="role-list">
+        <li>Создание и ведение заявок</li>
+        <li>База клиентов</li>
+        <li>Расписание записи</li>
+        <li>Просмотр программы лояльности</li>
+        <li class="no">Управление персоналом</li>
+        <li class="no">Настройки сервиса</li>
+      </ul>
+    </div>
+
     <div class="role-card">
       <div class="role-icon">🛠</div>
       <div class="role-name">Мастер</div>
       <div class="role-desc">Работает только со своими заявками.</div>
       <ul class="role-list">
         <li>Только назначенные заявки</li>
-        <li>Статусы работ</li>
-        <li>Данные клиента скрыты</li>
-        <li>Не может создавать заявки</li>
+        <li>Статусы и фото работ</li>
+        <li class="no">Имя и телефон клиента скрыты</li>
+        <li class="no">Создание заявок</li>
+        <li class="no">База клиентов</li>
       </ul>
     </div>
-    <div class="role-card">
-      <div class="role-icon">🗂</div>
-      <div class="role-name">Администратор</div>
-      <div class="role-desc">Приём клиентов и ведение записи.</div>
-      <ul class="role-list">
-        <li>Заявки и клиенты</li>
-        <li>Расписание</li>
-        <li>Программа лояльности (просмотр)</li>
-        <li>Без управления персоналом</li>
-      </ul>
-    </div>
+
   </div>
 </section>
 
@@ -276,7 +334,7 @@
       <div class="step-num">1</div>
       <div class="step-body">
         <h3>Оставьте заявку на подключение</h3>
-        <p>GarageOS — B2B-продукт. Напишите нам на почту, чтобы получить код активации для вашего сервиса.</p>
+        <p>GarageOS — B2B-продукт. Напишите нам, чтобы получить код активации для вашего сервиса.</p>
         <code>support@kolomeitsevs.com</code>
       </div>
     </div>
@@ -284,30 +342,54 @@
       <div class="step-num">2</div>
       <div class="step-body">
         <h3>Скачайте приложение</h3>
-        <p>Установите GarageOS из App Store на iPhone. Приложение работает только в тёмной теме — это осознанное дизайн-решение для условий автосервиса.</p>
+        <p>Установите GarageOS из App Store на iPhone. Приложение работает только в тёмной теме — это осознанное решение для использования в условиях автосервиса.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <div class="step-body">
         <h3>Введите код активации</h3>
-        <p>На экране входа введите код активации, который вы получили от нас. Код привязывает приложение к вашему сервису.</p>
+        <p>На экране входа введите код активации, полученный от нас. Код привязывает приложение к вашему сервису и задаёт роль пользователя.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">4</div>
       <div class="step-body">
         <h3>Добавьте сотрудников</h3>
-        <p>Владелец может приглашать мастеров и администраторов из раздела «Персонал» в настройках. Каждый сотрудник получает доступ согласно своей роли.</p>
+        <p>Владелец может выдавать инвайт-коды мастерам и приёмщикам. Каждый сотрудник вводит свой код при первом входе и получает доступ согласно роли.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">5</div>
       <div class="step-body">
         <h3>Создайте первую заявку</h3>
-        <p>Перейдите в раздел «Заявки» и нажмите «+». Укажите клиента, автомобиль и описание работ. Назначьте мастера и установите статус.</p>
+        <p>Перейдите в раздел «Заявки» → «+». Укажите клиента, автомобиль, описание работ, назначьте мастера. Заявка сразу появится у мастера в приложении.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ORDER STATUSES -->
+<section id="statuses">
+  <div class="section-label">Заявки</div>
+  <div class="section-title">Статусы заявки</div>
+  <div class="section-sub">Каждая заявка проходит жизненный цикл от создания до закрытия.</div>
+  <div class="status-flow">
+    <span class="status-chip active">Новая</span>
+    <span class="status-arrow">→</span>
+    <span class="status-chip">Ожидает клиента</span>
+    <span class="status-arrow">→</span>
+    <span class="status-chip">Запись подтверждена</span>
+    <span class="status-arrow">→</span>
+    <span class="status-chip">Принята</span>
+    <span class="status-arrow">→</span>
+    <span class="status-chip">В работе</span>
+    <span class="status-arrow">→</span>
+    <span class="status-chip">На согласовании</span>
+    <span class="status-arrow">→</span>
+    <span class="status-chip">Выполнена</span>
+    <span class="status-arrow">→</span>
+    <span class="status-chip">Закрыта</span>
   </div>
 </section>
 
@@ -315,73 +397,77 @@
 <section id="faq">
   <div class="section-label">FAQ</div>
   <div class="section-title">Частые вопросы</div>
-  <div class="section-sub">Ответы на самые популярные вопросы.</div>
-  <div class="faq">
 
-    <details>
-      <summary>Как получить доступ к GarageOS?</summary>
-      <div class="faq-body">
-        <p>GarageOS — это B2B-продукт для автосервисов. Доступ предоставляется по коду активации, который выдаётся при заключении договора. Напишите нам на <a href="mailto:support@kolomeitsevs.com">support@kolomeitsevs.com</a>, чтобы узнать условия подключения.</p>
-      </div>
-    </details>
+  <details>
+    <summary>Как получить доступ к GarageOS?</summary>
+    <div class="faq-body">
+      <p>GarageOS — B2B-продукт для автосервисов. Доступ предоставляется по инвайт-коду, который выдаётся при подключении сервиса. Напишите нам на <a href="mailto:support@kolomeitsevs.com">support@kolomeitsevs.com</a>, чтобы узнать условия.</p>
+    </div>
+  </details>
 
-    <details>
-      <summary>Почему приложение только в тёмной теме?</summary>
-      <div class="faq-body">
-        <p>Тёмная тема — осознанное решение для профессионального инструмента, который используется в условиях автосервиса: при разном освещении, с рабочими руками. Светлая тема не поддерживается.</p>
-      </div>
-    </details>
+  <details>
+    <summary>Почему приложение только в тёмной теме?</summary>
+    <div class="faq-body">
+      <p>Тёмная тема — осознанное дизайн-решение для профессионального инструмента, который используется в условиях автосервиса: при разном освещении, с рабочими руками. Светлая тема не поддерживается.</p>
+    </div>
+  </details>
 
-    <details>
-      <summary>Как добавить нового сотрудника?</summary>
-      <div class="faq-body">
-        <p>Войдите как Владелец → Настройки → Персонал → кнопка «Добавить». Укажите имя, роль и контакт сотрудника. Сотрудник получит инструкции для входа.</p>
-      </div>
-    </details>
+  <details>
+    <summary>Как добавить нового сотрудника?</summary>
+    <div class="faq-body">
+      <p>Войдите как Владелец → Настройки → Персонал. Создайте инвайт-код с нужной ролью и сроком действия. Сотрудник вводит этот код при первом входе в приложение.</p>
+    </div>
+  </details>
 
-    <details>
-      <summary>Мастер видит данные клиентов?</summary>
-      <div class="faq-body">
-        <p>Нет. У роли «Мастер» скрыты имя и телефон клиента. Мастер видит только описание работ, автомобиль и статус заявки.</p>
-      </div>
-    </details>
+  <details>
+    <summary>Мастер видит данные клиентов?</summary>
+    <div class="faq-body">
+      <p>Нет. Роль «Мастер» не имеет доступа к имени и телефону клиента. Мастер видит только описание работ, автомобиль и статус заявки, назначенной ему.</p>
+    </div>
+  </details>
 
-    <details>
-      <summary>Как работает программа лояльности?</summary>
-      <div class="faq-body">
-        <p>Владелец и Администратор могут просматривать баллы клиента. Начисление баллов настраивается владельцем в разделе «Лояльность» в настройках сервиса.</p>
-      </div>
-    </details>
+  <details>
+    <summary>Как работает программа лояльности?</summary>
+    <div class="faq-body">
+      <p>Владелец настраивает правила начисления и списания бонусных баллов в разделе «Лояльность». Приёмщик может просматривать баланс клиента. При закрытии заявки можно применить скидку за счёт баллов.</p>
+    </div>
+  </details>
 
-    <details>
-      <summary>Как оформляется подписка?</summary>
-      <div class="faq-body">
-        <p>Для конечных пользователей все покупки обрабатываются через Apple In-App Purchases прямо в приложении. Корпоративным клиентам (B2B) коды активации выдаются в рамках договора — они не продаются через App Store.</p>
-      </div>
-    </details>
+  <details>
+    <summary>Что такое напоминания?</summary>
+    <div class="faq-body">
+      <p>Владелец может настраивать автоматические напоминания клиентам: о плановом ТО, сезонной замене резины и других сервисных событиях. Напоминания отправляются через Telegram-бот сервиса.</p>
+    </div>
+  </details>
 
-    <details>
-      <summary>На каких устройствах работает приложение?</summary>
-      <div class="faq-body">
-        <p>GarageOS работает на iPhone с iOS 16 и выше. Версия для iPad и Android в планах на следующие версии.</p>
-      </div>
-    </details>
+  <details>
+    <summary>Что значит статус «На согласовании»?</summary>
+    <div class="faq-body">
+      <p>Когда мастер обнаружил дополнительные работы, он добавляет их в заявку. Они уходят клиенту на согласование через бот. Заявка переходит в статус «На согласовании» до получения ответа клиента.</p>
+    </div>
+  </details>
 
-    <details>
-      <summary>Что делать, если забыл пароль?</summary>
-      <div class="faq-body">
-        <p>На экране входа нажмите «Забыли пароль?» и введите email. Ссылка для сброса придёт в течение нескольких минут. Если письмо не пришло — проверьте папку «Спам» или напишите нам.</p>
-      </div>
-    </details>
+  <details>
+    <summary>На каких устройствах работает приложение?</summary>
+    <div class="faq-body">
+      <p>GarageOS работает на iPhone с iOS 16 и выше. Поддержка iPad в планах для следующих версий.</p>
+    </div>
+  </details>
 
-    <details>
-      <summary>Как связаться с поддержкой?</summary>
-      <div class="faq-body">
-        <p>Напишите на <a href="mailto:support@kolomeitsevs.com">support@kolomeitsevs.com</a>. Мы отвечаем в рабочие дни в течение 24 часов.</p>
-      </div>
-    </details>
+  <details>
+    <summary>Как оформляется подписка?</summary>
+    <div class="faq-body">
+      <p>Для корпоративных клиентов (B2B) доступ предоставляется по договору через инвайт-коды. Индивидуальная подписка оформляется через Apple In-App Purchases прямо в приложении.</p>
+    </div>
+  </details>
 
-  </div>
+  <details>
+    <summary>Как связаться с поддержкой?</summary>
+    <div class="faq-body">
+      <p>Напишите на <a href="mailto:support@kolomeitsevs.com">support@kolomeitsevs.com</a>. Отвечаем в рабочие дни в течение 24 часов.</p>
+    </div>
+  </details>
+
 </section>
 
 <!-- CONTACT -->
@@ -391,7 +477,7 @@
   <div class="contact-card">
     <div style="font-size:40px">✉️</div>
     <h3>Служба поддержки</h3>
-    <p>Если вы не нашли ответ на свой вопрос — напишите нам. Отвечаем в рабочие дни в течение 24 часов.</p>
+    <p>Не нашли ответ на свой вопрос? Напишите нам — ответим в рабочие дни в течение 24 часов.</p>
     <a class="contact-email" href="mailto:support@kolomeitsevs.com">
       support@kolomeitsevs.com
     </a>
@@ -399,7 +485,7 @@
 </section>
 
 <footer>
-  <p>© 2026 GarageOS · <a href="/privacy">Политика конфиденциальности</a> · <a href="/terms">Условия использования</a></p>
+  <p>© 2026 GarageOS &nbsp;·&nbsp; <a href="/privacy">Политика конфиденциальности</a> &nbsp;·&nbsp; <a href="/terms">Условия использования</a></p>
 </footer>
 
 </body>
