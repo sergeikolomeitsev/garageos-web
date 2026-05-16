@@ -620,6 +620,67 @@
       </div>
     </div>
   </div>
+
+  <!-- Что умеет бот -->
+  <div style="margin-top: 56px;">
+    <div class="section-label">Что умеет бот</div>
+    <div class="section-title" style="font-size: clamp(18px, 3.5vw, 26px); margin-top: 8px; margin-bottom: 8px;">Как бот работает с клиентами</div>
+    <div class="section-sub" style="margin-bottom: 32px;">Бот — первая точка контакта. Отвечает на вопросы, принимает запись и держит клиента в курсе статуса заявки — без участия сотрудников.</div>
+
+    <div class="invite-flow">
+      <div class="invite-flow-title">Типичный сценарий работы</div>
+      <div class="invite-steps">
+        <div class="invite-step">
+          <div class="invite-step-num">1</div>
+          <div class="invite-step-text">Клиент открывает бот — получает приветствие с <strong>названием сервиса</strong> и специализацией. Если обращается впервые — предлагает написать о проблеме или вопросе.</div>
+        </div>
+        <div class="invite-step">
+          <div class="invite-step-num">2</div>
+          <div class="invite-step-text"><strong>ИИ-ассистент</strong> отвечает на вопросы автоматически — по базе знаний сервиса. Работает круглосуточно. Если ответ неизвестен — бот пересылает вопрос приёмщику, а тот отвечает через удобный интерфейс в Telegram; ответ автоматически уходит клиенту.</div>
+        </div>
+        <div class="invite-step">
+          <div class="invite-step-num">3</div>
+          <div class="invite-step-text">При желании записаться: бот сначала уточняет <strong>услугу или проблему</strong>, затем просит имя и телефон, потом марку и модель автомобиля — и создаёт заявку в системе. Приёмщик сразу видит её в приложении.</div>
+        </div>
+        <div class="invite-step">
+          <div class="invite-step-num">4</div>
+          <div class="invite-step-text">Приёмщик или владелец видят диалог в разделе <strong>«Диалоги»</strong> приложения. В любой момент можно ответить лично — ИИ при этом отключается. Вернуть автоответ можно кнопкой «Вернуть боту».</div>
+        </div>
+        <div class="invite-step">
+          <div class="invite-step-num">5</div>
+          <div class="invite-step-text">При смене ключевых статусов клиент получает уведомление в боте: когда автомобиль принят в сервис, когда обнаружены доп. работы, когда всё готово и при закрытии заявки.</div>
+        </div>
+        <div class="invite-step">
+          <div class="invite-step-num">6</div>
+          <div class="invite-step-text">Если мастер добавил дополнительные работы — клиент получает список с ценами и кнопками <strong>✅ Подтвердить / ❌ Отклонить</strong>. Ответ автоматически обновляет статус заявки.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px;">
+      <div class="role-card" style="padding: 16px 20px;">
+        <div style="font-size: 22px; margin-bottom: 8px;">📞</div>
+        <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">/call · /callback</div>
+        <div style="font-size: 13px; color: var(--label2);">Клиент запрашивает обратный звонок. Приёмщик и владелец мгновенно получают уведомление с именем и номером клиента.</div>
+      </div>
+      <div class="role-card" style="padding: 16px 20px;">
+        <div style="font-size: 22px; margin-bottom: 8px;">📋</div>
+        <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">/status</div>
+        <div style="font-size: 13px; color: var(--label2);">Клиент может в любой момент узнать текущий статус своей заявки, не обращаясь к сотрудникам.</div>
+      </div>
+      <div class="role-card" style="padding: 16px 20px;">
+        <div style="font-size: 22px; margin-bottom: 8px;">🔔</div>
+        <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">Push-уведомления</div>
+        <div style="font-size: 13px; color: var(--label2);">При поступлении новой заявки или вопроса от клиента сотрудники получают push-уведомление прямо в приложении.</div>
+      </div>
+      <div class="role-card" style="padding: 16px 20px;">
+        <div style="font-size: 22px; margin-bottom: 8px;">🕐</div>
+        <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">Напоминания о визите</div>
+        <div style="font-size: 13px; color: var(--label2);">Бот автоматически напоминает клиентам о подтверждённой записи. Работает только для заявок со статусом «Запись подтверждена».</div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- ORDER STATUSES -->
@@ -644,6 +705,70 @@
     <span class="status-arrow">→</span>
     <span class="status-chip">Закрыта</span>
   </div>
+
+  <div style="margin-top: 32px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+      <thead>
+        <tr>
+          <th style="padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--label2); background: var(--surface2); border-bottom: 1px solid var(--border);">Статус</th>
+          <th style="padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--label2); background: var(--surface2); border-bottom: 1px solid var(--border);">Что означает</th>
+          <th style="padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--label2); background: var(--surface2); border-bottom: 1px solid var(--border);">Уведомление клиенту</th>
+          <th style="padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--label2); background: var(--surface2); border-bottom: 1px solid var(--border);">Кто переводит</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap; color: var(--accent-light);">Новая</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Заявка создана. Мастер ещё не назначен.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Приёмщик получает push-уведомление в приложении</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Приёмщик, владелец или бот</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">Ожидает клиента</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Приёмщик предложил время записи — ожидаем ответа.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">«Вас записали на сервис» + кнопки <strong>Подтвердить / Отклонить</strong></td>
+          <td style="padding: 12px 16px; color: var(--label2);">Приёмщик, владелец</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">Запись подтверждена</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Клиент подтвердил время. Ждём автомобиль.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">«Ваша запись подтверждена» + время, услуга, адрес и ссылка 2GIS</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Клиент через бот или приёмщик</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">Принята</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Автомобиль принят в сервис, мастер приступает к работе.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">«Ваш автомобиль принят, заявка в работе»</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Приёмщик, владелец</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">В работе</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Мастер выполняет работы по заявке.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">—</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Мастер, приёмщик, владелец</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">На согласовании</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Мастер добавил дополнительные работы — ждём ответа клиента.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Список доп. работ с ценами + кнопки <strong>✅ Подтвердить / ❌ Отклонить</strong></td>
+          <td style="padding: 12px 16px; color: var(--label2);">Мастер автоматически при добавлении доп. работ</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">Выполнена</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Все работы завершены, автомобиль готов к выдаче.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">«Заявка выполнена! Автомобиль готов к выдаче» + итоговая сумма (если задана)</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Мастер, приёмщик, владелец</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">Закрыта</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Заявка полностью закрыта. Бонусные баллы начислены — если настроена программа лояльности.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">«Заявка закрыта, рады были помочь» + опрос оценки качества работ</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Приёмщик, владелец</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </section>
 
 <!-- FAQ -->
@@ -721,6 +846,37 @@
     <summary>Что значит статус «На согласовании»?</summary>
     <div class="faq-body">
       <p>Когда мастер обнаружил дополнительные работы, он добавляет их в заявку. Они уходят клиенту на согласование через бот. Заявка переходит в статус «На согласовании» до получения ответа клиента.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Клиент получает уведомления о статусе заявки автоматически?</summary>
+    <div class="faq-body">
+      <p>Да, автоматически — при каждом ключевом переходе статуса клиенту приходит сообщение в Telegram-бот без участия сотрудников: когда автомобиль принят, когда обнаружены доп. работы на согласование, когда работы выполнены и когда заявка закрыта.</p>
+      <p>В уведомлениях используется внутренний номер заявки в формате <strong>#0001</strong> — нумерация ведётся отдельно для каждого сервиса, начиная с первой заявки.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Как клиент может запросить обратный звонок?</summary>
+    <div class="faq-body">
+      <p><strong>/call</strong> — показывает клиенту кнопки для прямого звонка (сотовая и Telegram), если в настройках указан телефон приёмщика. Одновременно приёмщик получает уведомление в Telegram.</p>
+      <p><strong>/callback</strong> — отправляет приёмщику и владельцу запрос с именем и телефоном клиента: action-карточку в разделе «Диалоги» приложения и сообщение в Telegram. Клиент получает подтверждение «приёмщик перезвонит в ближайшее время».</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Где в приложении видеть переписку с клиентами и отвечать им?</summary>
+    <div class="faq-body">
+      <p>Раздел <strong>«Диалоги»</strong> — все чаты с клиентами в реальном времени. Новый диалог появляется с первого сообщения клиента в боте.</p>
+      <p>По умолчанию на вопросы отвечает ИИ-ассистент. Как только приёмщик или владелец пишет в диалоге сам — ИИ отключается. Вернуть автоответ можно кнопкой «Вернуть боту» в том же диалоге.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Что если ИИ не знает ответ на вопрос клиента?</summary>
+    <div class="faq-body">
+      <p>Если вопрос выходит за рамки базы знаний, бот пересылает его приёмщику и владельцу с кнопкой «Ответить». Приёмщик вводит ответ прямо в Telegram — клиент получает его автоматически.</p>
     </div>
   </details>
 
