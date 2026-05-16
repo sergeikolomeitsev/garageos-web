@@ -594,7 +594,7 @@
         </div>
         <div class="invite-step">
           <div class="invite-step-num">5</div>
-          <div class="invite-step-text">При смене ключевых статусов клиент получает уведомление в боте: когда автомобиль принят в сервис, когда обнаружены доп. работы, когда всё готово и при закрытии заявки.</div>
+          <div class="invite-step-text">При ключевых переходах статуса клиент получает уведомление в боте автоматически: <strong>Ожидает</strong> — «Вас записали, подтвердите»; <strong>Подтверждена</strong> — детали визита; <strong>Принята</strong> — «Автомобиль принят»; <strong>Готова</strong> — «Автомобиль готов к выдаче»; <strong>Закрыта</strong> — оценочный опрос.</div>
         </div>
         <div class="invite-step">
           <div class="invite-step-num">6</div>
@@ -622,7 +622,7 @@
       <div class="role-card" style="padding: 16px 20px;">
         <div style="font-size: 22px; margin-bottom: 8px;">🕐</div>
         <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">Напоминания о визите</div>
-        <div style="font-size: 13px; color: var(--label2);">Бот автоматически напоминает клиентам о подтверждённой записи. Работает только для заявок со статусом «Запись подтверждена».</div>
+        <div style="font-size: 13px; color: var(--label2);">Бот автоматически напоминает клиентам о предстоящем визите. Работает только для заявок в статусе «Подтверждена».</div>
       </div>
     </div>
   </div>
@@ -635,21 +635,21 @@
   <div class="section-title">Статусы заявки</div>
   <div class="section-sub">Каждая заявка проходит жизненный цикл от создания до закрытия.</div>
   <div class="status-flow">
-    <span class="status-chip active">Новая</span>
+    <span class="status-chip" style="color:#ffb340;background:rgba(255,179,64,0.16);border-color:rgba(255,179,64,0.4);">Новая</span>
     <span class="status-arrow">→</span>
-    <span class="status-chip">Ожидает клиента</span>
+    <span class="status-chip" style="color:#ffb340;background:rgba(255,179,64,0.16);border-color:rgba(255,179,64,0.4);">Ожидает</span>
     <span class="status-arrow">→</span>
-    <span class="status-chip">Запись подтверждена</span>
+    <span class="status-chip" style="color:#32ade6;background:rgba(50,173,230,0.16);border-color:rgba(50,173,230,0.4);">Подтверждена</span>
     <span class="status-arrow">→</span>
-    <span class="status-chip">Принята</span>
+    <span class="status-chip" style="color:#bf5af2;background:rgba(191,90,242,0.16);border-color:rgba(191,90,242,0.4);">Принята</span>
     <span class="status-arrow">→</span>
-    <span class="status-chip">В работе</span>
+    <span class="status-chip" style="color:#0a84ff;background:rgba(10,132,255,0.16);border-color:rgba(10,132,255,0.4);">В работе</span>
     <span class="status-arrow">→</span>
-    <span class="status-chip">На согласовании</span>
+    <span class="status-chip" style="color:#f07820;background:rgba(240,120,32,0.15);border-color:rgba(240,120,32,0.4);">Проверка</span>
     <span class="status-arrow">→</span>
-    <span class="status-chip">Выполнена</span>
+    <span class="status-chip" style="color:#6ec989;background:rgba(46,138,78,0.18);border-color:rgba(46,138,78,0.4);">Готова</span>
     <span class="status-arrow">→</span>
-    <span class="status-chip">Закрыта</span>
+    <span class="status-chip" style="color:#6ec989;background:rgba(46,138,78,0.18);border-color:rgba(46,138,78,0.4);">Закрыта</span>
   </div>
 
   <div style="margin-top: 32px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;">
@@ -664,51 +664,51 @@
       </thead>
       <tbody>
         <tr style="border-bottom: 1px solid var(--border);">
-          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap; color: var(--accent-light);">Новая</td>
-          <td style="padding: 12px 16px; color: var(--label2);">Заявка создана. Мастер ещё не назначен.</td>
-          <td style="padding: 12px 16px; color: var(--label2);">Приёмщик получает push-уведомление в приложении</td>
+          <td style="padding: 12px 16px; font-weight: 600; white-space: nowrap;"><span style="color:#ffb340;">Новая</span></td>
+          <td style="padding: 12px 16px; color: var(--label2);">Заявка только создана — вручную приёмщиком/владельцем или через Telegram-бот. Мастер ещё не назначен.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Приёмщик и владелец получают push-уведомление в приложении</td>
           <td style="padding: 12px 16px; color: var(--label2);">Приёмщик, владелец или бот</td>
         </tr>
         <tr style="border-bottom: 1px solid var(--border);">
-          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">Ожидает клиента</td>
-          <td style="padding: 12px 16px; color: var(--label2);">Приёмщик предложил время записи — ожидаем ответа.</td>
+          <td style="padding: 12px 16px; font-weight: 600; white-space: nowrap;"><span style="color:#ffb340;">Ожидает</span></td>
+          <td style="padding: 12px 16px; color: var(--label2);">Приёмщик назначил дату и время визита — ждём подтверждения от клиента.</td>
           <td style="padding: 12px 16px; color: var(--label2);">«Вас записали на сервис» + кнопки <strong>Подтвердить / Отклонить</strong></td>
           <td style="padding: 12px 16px; color: var(--label2);">Приёмщик, владелец</td>
         </tr>
         <tr style="border-bottom: 1px solid var(--border);">
-          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">Запись подтверждена</td>
-          <td style="padding: 12px 16px; color: var(--label2);">Клиент подтвердил время. Ждём автомобиль.</td>
-          <td style="padding: 12px 16px; color: var(--label2);">«Ваша запись подтверждена» + время, услуга, адрес и ссылка 2GIS</td>
+          <td style="padding: 12px 16px; font-weight: 600; white-space: nowrap;"><span style="color:#32ade6;">Подтверждена</span></td>
+          <td style="padding: 12px 16px; color: var(--label2);">Клиент подтвердил время. Заявка ждёт приезда автомобиля. Бот автоматически напомнит клиенту о предстоящем визите.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">«Ваша запись подтверждена» + время, услуга, адрес и ссылка на 2GIS</td>
           <td style="padding: 12px 16px; color: var(--label2);">Клиент через бот или приёмщик</td>
         </tr>
         <tr style="border-bottom: 1px solid var(--border);">
-          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">Принята</td>
-          <td style="padding: 12px 16px; color: var(--label2);">Автомобиль принят в сервис, мастер приступает к работе.</td>
-          <td style="padding: 12px 16px; color: var(--label2);">«Ваш автомобиль принят, заявка в работе»</td>
+          <td style="padding: 12px 16px; font-weight: 600; white-space: nowrap;"><span style="color:#bf5af2;">Принята</span></td>
+          <td style="padding: 12px 16px; color: var(--label2);">Автомобиль прибыл и принят. Приёмщик зафиксировал состояние, назначил мастера. Мастер видит заявку в своём списке.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">«Ваш автомобиль принят. Заявка в работе»</td>
           <td style="padding: 12px 16px; color: var(--label2);">Приёмщик, владелец</td>
         </tr>
         <tr style="border-bottom: 1px solid var(--border);">
-          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">В работе</td>
-          <td style="padding: 12px 16px; color: var(--label2);">Мастер выполняет работы по заявке.</td>
+          <td style="padding: 12px 16px; font-weight: 600; white-space: nowrap;"><span style="color:#0a84ff;">В работе</span></td>
+          <td style="padding: 12px 16px; color: var(--label2);">Мастер выполняет работы. Если обнаружены доп. работы — он добавляет их с ценами, клиенту уходит запрос на согласование. Заявка при этом <strong>остаётся «В работе»</strong>.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">При доп. работах: список с ценами + кнопки <strong>✅ Подтвердить / ❌ Отклонить</strong></td>
+          <td style="padding: 12px 16px; color: var(--label2);">Мастер, приёмщик, владелец</td>
+        </tr>
+        <tr style="border-bottom: 1px solid var(--border);">
+          <td style="padding: 12px 16px; font-weight: 600; white-space: nowrap;"><span style="color:#f07820;">Проверка</span></td>
+          <td style="padding: 12px 16px; color: var(--label2);">Мастер завершил работы — приёмщик проверяет результат. При замечаниях заявка возвращается мастеру обратно в «В работе». Если всё в порядке — переходит в «Готова».</td>
           <td style="padding: 12px 16px; color: var(--label2);">—</td>
-          <td style="padding: 12px 16px; color: var(--label2);">Мастер, приёмщик, владелец</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Мастер (из «В работе»)</td>
         </tr>
         <tr style="border-bottom: 1px solid var(--border);">
-          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">На согласовании</td>
-          <td style="padding: 12px 16px; color: var(--label2);">Мастер добавил дополнительные работы — ждём ответа клиента.</td>
-          <td style="padding: 12px 16px; color: var(--label2);">Список доп. работ с ценами + кнопки <strong>✅ Подтвердить / ❌ Отклонить</strong></td>
-          <td style="padding: 12px 16px; color: var(--label2);">Мастер автоматически при добавлении доп. работ</td>
-        </tr>
-        <tr style="border-bottom: 1px solid var(--border);">
-          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">Выполнена</td>
-          <td style="padding: 12px 16px; color: var(--label2);">Все работы завершены, автомобиль готов к выдаче.</td>
+          <td style="padding: 12px 16px; font-weight: 600; white-space: nowrap;"><span style="color:#6ec989;">Готова</span></td>
+          <td style="padding: 12px 16px; color: var(--label2);">Работы проверены и завершены. Автомобиль готов к выдаче клиенту.</td>
           <td style="padding: 12px 16px; color: var(--label2);">«Заявка выполнена! Автомобиль готов к выдаче» + итоговая сумма (если задана)</td>
-          <td style="padding: 12px 16px; color: var(--label2);">Мастер, приёмщик, владелец</td>
+          <td style="padding: 12px 16px; color: var(--label2);">Приёмщик (после проверки)</td>
         </tr>
         <tr>
-          <td style="padding: 12px 16px; font-weight: 500; white-space: nowrap;">Закрыта</td>
-          <td style="padding: 12px 16px; color: var(--label2);">Заявка полностью закрыта. Бонусные баллы начислены — если настроена программа лояльности.</td>
-          <td style="padding: 12px 16px; color: var(--label2);">«Заявка закрыта, рады были помочь» + опрос оценки качества работ</td>
+          <td style="padding: 12px 16px; font-weight: 600; white-space: nowrap;"><span style="color:#6ec989;">Закрыта</span></td>
+          <td style="padding: 12px 16px; color: var(--label2);">Автомобиль выдан, оплата получена. Заявка полностью закрыта. Если настроена программа лояльности — клиенту начисляются бонусные баллы.</td>
+          <td style="padding: 12px 16px; color: var(--label2);">«Заявка закрыта» + опрос оценки качества + баллы (если начислены)</td>
           <td style="padding: 12px 16px; color: var(--label2);">Приёмщик, владелец</td>
         </tr>
       </tbody>
@@ -789,9 +789,19 @@
   </details>
 
   <details>
-    <summary>Что значит статус «На согласовании»?</summary>
+    <summary>Что значит «На согласовании» у дополнительных работ?</summary>
     <div class="faq-body">
-      <p>Когда мастер обнаружил дополнительные работы, он добавляет их в заявку. Они уходят клиенту на согласование через бот. Заявка переходит в статус «На согласовании» до получения ответа клиента.</p>
+      <p>«На согласовании» — это статус <strong>отдельной дополнительной работы</strong>, а не всей заявки. Когда мастер обнаруживает доп. работы, он добавляет их с ценами — каждая уходит клиенту на согласование через бот. Клиент получает список с кнопками <strong>✅ Подтвердить / ❌ Отклонить</strong>.</p>
+      <p>Сама заявка при этом <strong>остаётся в статусе «В работе»</strong> — работа не останавливается, просто отдельные позиции ждут ответа клиента.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Что такое статус «Проверка»?</summary>
+    <div class="faq-body">
+      <p>Когда мастер завершил все работы, он переводит заявку в «Проверку». На этом этапе приёмщик осматривает результат <strong>до того</strong>, как клиенту сообщают о готовности автомобиля.</p>
+      <p>Если обнаружены недочёты — приёмщик возвращает заявку мастеру обратно в «В работе». Если всё в порядке — переводит в «Готова», и клиент получает уведомление о том, что автомобиль готов к выдаче.</p>
+      <p>Клиент на этапе «Проверка» никаких уведомлений не получает.</p>
     </div>
   </details>
 
