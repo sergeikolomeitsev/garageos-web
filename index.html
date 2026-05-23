@@ -359,7 +359,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <img src="logo.png" class="hero-logo" alt="GarageOS" />
   <div class="hero-badge">📱 Версия 1.0 · iOS</div>
@@ -371,21 +370,14 @@
   </div>
 </div>
 
-<!-- ROLES -->
 <section id="roles">
   <div class="section-label">Доступ</div>
   <div class="section-title">Роли в приложении</div>
   <div class="section-sub">У каждого сотрудника — своя область видимости и возможностей.</div>
-  <!-- Таблица прав -->
   <div class="perm-table-wrap">
     <table class="perm-table">
       <thead>
-        <tr>
-          <th>Функция</th>
-          <th>👑 Владелец</th>
-          <th>🗂 Приёмщик</th>
-          <th>🛠 Мастер</th>
-        </tr>
+        <tr><th>Функция</th><th>👑 Владелец</th><th>🗂 Приёмщик</th><th>🛠 Мастер</th></tr>
       </thead>
       <tbody>
         <tr><td>Создание заявок</td><td class="yes">✓</td><td class="yes">✓</td><td class="pt-no">✗</td></tr>
@@ -403,11 +395,8 @@
       </tbody>
     </table>
   </div>
-
-
 </section>
 
-<!-- GETTING STARTED -->
 <section id="start">
   <div class="section-label">Руководство</div>
   <div class="section-title">Начало работы</div>
@@ -440,25 +429,25 @@
         <h3>Добавьте сотрудников</h3>
         <p>В разделе «Персонал» добавьте мастеров и приёмщиков по email.</p>
         <div class="invite-flow" style="margin-top: 16px;">
-          <div class="invite-steps">
-            <div class="invite-step">
-              <div class="invite-step-num">1</div>
-              <div class="invite-step-text">Нажмите <strong>«Добавить»</strong> и укажите имя, email и роль сотрудника.</div>
-            </div>
-            <div class="invite-step">
-              <div class="invite-step-num">2</div>
-              <div class="invite-step-text">Сотруднику автоматически приходит письмо с <strong>6-значным кодом</strong> (действует 15 минут).</div>
-            </div>
-            <div class="invite-step">
-              <div class="invite-step-num">3</div>
-              <div class="invite-step-text">Сотрудник устанавливает GarageOS из App Store, вводит <strong>email</strong>, затем <strong>код из письма</strong> и задаёт пароль.</div>
-            </div>
-            <div class="invite-step">
-              <div class="invite-step-num">4</div>
-              <div class="invite-step-text">Готово — при следующих входах используется <strong>email и пароль</strong>.</div>
-            </div>
-          </div>
-        </div>
+  <div class="invite-steps">
+    <div class="invite-step">
+      <div class="invite-step-num">1</div>
+      <div class="invite-step-text">Нажмите <strong>«Добавить»</strong> и укажите имя, email и роль сотрудника.</div>
+    </div>
+    <div class="invite-step">
+      <div class="invite-step-num">2</div>
+      <div class="invite-step-text">Сотруднику автоматически приходит письмо с <strong>6-значным кодом</strong> (действует 15 минут).</div>
+    </div>
+    <div class="invite-step">
+      <div class="invite-step-num">3</div>
+      <div class="invite-step-text">Сотрудник устанавливает GarageOS из App Store, вводит <strong>email</strong>, затем <strong>код из письма</strong> и задаёт пароль.</div>
+    </div>
+    <div class="invite-step">
+      <div class="invite-step-num">4</div>
+      <div class="invite-step-text">Готово — при следующих входах используется <strong>email и пароль</strong>.</div>
+    </div>
+  </div>
+</div>
       </div>
     </div>
     <div class="step">
@@ -471,14 +460,12 @@
   </div>
 </section>
 
-<!-- TELEGRAM BOT -->
 <section id="telegram">
   <div class="section-label">Telegram-бот</div>
   <div class="section-title">Как получить токен бота</div>
   <div class="section-sub">Токен нужен при регистрации — он связывает GarageOS с вашим Telegram-ботом, через который клиенты записываются и получают уведомления.</div>
 
   <div class="tg-steps">
-
     <div class="tg-step">
       <div class="tg-step-left">
         <div class="tg-step-circle">🔍</div>
@@ -489,10 +476,9 @@
         <span class="tg-step-title">Найдите @BotFather</span>
         <p class="tg-step-desc">Откройте Telegram на телефоне или компьютере. В строке поиска введите:</p>
         <div class="tg-highlight">@BotFather</div>
-        <p class="tg-step-desc" style="margin-top:8px">Выберите официальный аккаунт — рядом с ним синяя галочка ✔️. Нажмите <strong>Start</strong> / <strong>Начать</strong>.</p>
+        <p class="tg-step-desc">Выберите официальный аккаунт — рядом с ним синяя галочка ✔️. Нажмите <strong>Start</strong> / <strong>Начать</strong>.</p>
       </div>
     </div>
-
     <div class="tg-step">
       <div class="tg-step-left">
         <div class="tg-step-circle">💬</div>
@@ -503,10 +489,9 @@
         <span class="tg-step-title">Отправьте команду создания</span>
         <p class="tg-step-desc">Напишите BotFather следующую команду и отправьте:</p>
         <div class="tg-highlight">/newbot</div>
-        <p class="tg-step-desc" style="margin-top:8px">BotFather ответит и попросит ввести имя нового бота.</p>
+        <p class="tg-step-desc">BotFather ответит и попросит ввести имя нового бота.</p>
       </div>
     </div>
-
     <div class="tg-step">
       <div class="tg-step-left">
         <div class="tg-step-circle">✏️</div>
@@ -517,10 +502,9 @@
         <span class="tg-step-title">Введите название бота</span>
         <p class="tg-step-desc">Это <strong>отображаемое имя</strong> — его увидят ваши клиенты в чате. Может быть на русском, с пробелами. Например:</p>
         <div class="tg-highlight">Автосервис Серикжана</div>
-        <p class="tg-step-desc" style="margin-top:8px">Отправьте имя в чат. BotFather попросит задать username.</p>
+        <p class="tg-step-desc">Отправьте имя в чат. BotFather попросит задать username.</p>
       </div>
     </div>
-
     <div class="tg-step">
       <div class="tg-step-left">
         <div class="tg-step-circle">@</div>
@@ -530,44 +514,35 @@
         <span class="tg-step-num">4</span>
         <span class="tg-step-title">Введите username бота</span>
         <p class="tg-step-desc">Это <strong>уникальный адрес</strong> бота в Telegram. Правила:</p>
-        <ul style="margin: 8px 0 8px 16px; font-size:14px; color: var(--label2); line-height:1.7">
-          <li>Только латиница и цифры</li>
-          <li>Обязательно заканчивается на <code style="font-size:13px; color:var(--accent-light)">_bot</code></li>
-          <li>Минимум 5 символов</li>
-          <li>Должен быть уникальным в Telegram</li>
-        </ul>
+        <ul style="margin: 8px 0 8px 16px; font-size:14px; color: var(--label2); line-height:1.7"><li>Только латиница и цифры</li><li>Обязательно заканчивается на <code style="font-size:13px; color:var(--accent-light)">_bot</code></li><li>Минимум 5 символов</li><li>Должен быть уникальным в Telegram</li></ul>
         <p class="tg-step-desc">Например:</p>
         <div class="tg-highlight">ivanov_avto_bot</div>
-        <p class="tg-step-desc" style="margin-top:8px">Если username занят — BotFather сообщит об этом. Попробуйте другой вариант.</p>
+        <p class="tg-step-desc">Если username занят — BotFather сообщит об этом. Попробуйте другой вариант.</p>
       </div>
     </div>
-
     <div class="tg-step">
       <div class="tg-step-left">
         <div class="tg-step-circle">🔑</div>
+        
       </div>
       <div class="tg-step-body">
         <span class="tg-step-num">5</span>
         <span class="tg-step-title">Скопируйте токен</span>
         <p class="tg-step-desc">BotFather пришлёт сообщение с поздравлением и токеном вида:</p>
         <div class="tg-highlight">7123456789:AAF-abcDefGhijKlmNopQrsT_uvwXyz</div>
-        <p class="tg-step-desc" style="margin-top:8px">Нажмите на токен чтобы скопировать. <strong>Не передавайте токен третьим лицам</strong> — через него управляется весь бот.</p>
+        <p class="tg-step-desc">Нажмите на токен чтобы скопировать. <strong>Не передавайте токен третьим лицам</strong> — через него управляется весь бот.</p>
       </div>
     </div>
-
   </div>
 
   <div class="tg-where-box">
-    <div class="tg-where-icon">📲</div>
-    <div>
-      <div class="tg-where-title">Куда вставить токен в GarageOS</div>
-      <div class="tg-where-desc">
-        При регистрации (создании аккаунта владельца) на шаге заполнения данных сервиса появится поле <strong>«Токен Telegram-бота»</strong>. Вставьте скопированный токен — приложение автоматически проверит его и покажет username вашего бота. Если вы пропустили этот шаг, токен можно добавить позже в <strong>Настройки → Уведомления</strong>.
-      </div>
-    </div>
+  <div class="tg-where-icon">📲</div>
+  <div>
+    <div class="tg-where-title">Куда вставить токен в GarageOS</div>
+    <div class="tg-where-desc">При регистрации (создании аккаунта владельца) на шаге заполнения данных сервиса появится поле <strong>«Токен Telegram-бота»</strong>. Вставьте скопированный токен — приложение автоматически проверит его и покажет username вашего бота. Если вы пропустили этот шаг, токен можно добавить позже в <strong>Настройки → Уведомления</strong>.</div>
   </div>
+</div>
 
-  <!-- Что умеет бот -->
   <div style="margin-top: 56px;">
     <div class="section-label">Что умеет бот</div>
     <div class="section-title" style="font-size: clamp(18px, 3.5vw, 26px); margin-top: 8px; margin-bottom: 8px;">Как бот работает с клиентами</div>
@@ -576,60 +551,58 @@
     <div class="invite-flow">
       <div class="invite-flow-title">Типичный сценарий работы</div>
       <div class="invite-steps">
-        <div class="invite-step">
-          <div class="invite-step-num">1</div>
-          <div class="invite-step-text">Клиент открывает бот — получает приветствие с <strong>названием сервиса</strong> и специализацией. Если обращается впервые — предлагает написать о проблеме или вопросе.</div>
-        </div>
-        <div class="invite-step">
-          <div class="invite-step-num">2</div>
-          <div class="invite-step-text"><strong>ИИ-ассистент</strong> отвечает на вопросы автоматически — по базе знаний сервиса. Работает круглосуточно. Если ответ неизвестен — бот пересылает вопрос приёмщику, а тот отвечает через удобный интерфейс в Telegram; ответ автоматически уходит клиенту.</div>
-        </div>
-        <div class="invite-step">
-          <div class="invite-step-num">3</div>
-          <div class="invite-step-text">При желании записаться: бот сначала уточняет <strong>услугу или проблему</strong>, затем просит имя и телефон, потом марку и модель автомобиля — и создаёт заявку в системе. Приёмщик сразу видит её в приложении.</div>
-        </div>
-        <div class="invite-step">
-          <div class="invite-step-num">4</div>
-          <div class="invite-step-text">Приёмщик или владелец видят диалог в разделе <strong>«Диалоги»</strong> приложения. В любой момент можно ответить лично — ИИ при этом отключается. Вернуть автоответ можно кнопкой «Вернуть боту».</div>
-        </div>
-        <div class="invite-step">
-          <div class="invite-step-num">5</div>
-          <div class="invite-step-text">При ключевых переходах статуса клиент получает уведомление в боте автоматически: <strong>Ожидает</strong> — «Вас записали, подтвердите»; <strong>Подтверждена</strong> — детали визита; <strong>Принята</strong> — «Автомобиль принят»; <strong>Готова</strong> — «Автомобиль готов к выдаче»; <strong>Закрыта</strong> — оценочный опрос.</div>
-        </div>
-        <div class="invite-step">
-          <div class="invite-step-num">6</div>
-          <div class="invite-step-text">Если мастер добавил дополнительные работы — клиент получает список с ценами и кнопками <strong>✅ Подтвердить / ❌ Отклонить</strong>. Ответ автоматически обновляет статус заявки.</div>
-        </div>
+      <div class="invite-step">
+        <div class="invite-step-num">1</div>
+        <div class="invite-step-text">Клиент открывает бот — получает приветствие с <strong>названием сервиса</strong> и специализацией. Если обращается впервые — предлагает написать о проблеме или вопросе.</div>
+      </div>
+      <div class="invite-step">
+        <div class="invite-step-num">2</div>
+        <div class="invite-step-text"><strong>ИИ-ассистент</strong> отвечает на вопросы автоматически — по базе знаний сервиса. Работает круглосуточно. Если ответ неизвестен — бот пересылает вопрос приёмщику, а тот отвечает через удобный интерфейс в Telegram; ответ автоматически уходит клиенту.</div>
+      </div>
+      <div class="invite-step">
+        <div class="invite-step-num">3</div>
+        <div class="invite-step-text">При желании записаться: бот сначала уточняет <strong>услугу или проблему</strong>, затем просит имя и телефон, потом марку и модель автомобиля — и создаёт заявку в системе. Приёмщик сразу видит её в приложении.</div>
+      </div>
+      <div class="invite-step">
+        <div class="invite-step-num">4</div>
+        <div class="invite-step-text">Приёмщик или владелец видят диалог в разделе <strong>«Диалоги»</strong> приложения. В любой момент можно ответить лично — ИИ при этом отключается. Вернуть автоответ можно кнопкой «Вернуть боту».</div>
+      </div>
+      <div class="invite-step">
+        <div class="invite-step-num">5</div>
+        <div class="invite-step-text">При ключевых переходах статуса клиент получает уведомление в боте автоматически: <strong>Ожидает</strong> — «Вас записали, подтвердите»; <strong>Подтверждена</strong> — детали визита; <strong>Принята</strong> — «Автомобиль принят»; <strong>Готова</strong> — «Автомобиль готов к выдаче»; <strong>Закрыта</strong> — оценочный опрос.</div>
+      </div>
+      <div class="invite-step">
+        <div class="invite-step-num">6</div>
+        <div class="invite-step-text">Если мастер добавил дополнительные работы — клиент получает список с ценами и кнопками <strong>✅ Подтвердить / ❌ Отклонить</strong>. Ответ автоматически обновляет статус заявки.</div>
+      </div>
       </div>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px;">
       <div class="role-card" style="padding: 16px 20px;">
-        <div style="font-size: 22px; margin-bottom: 8px;">📞</div>
-        <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">/call · /callback</div>
-        <div style="font-size: 13px; color: var(--label2);">Клиент запрашивает обратный звонок. Приёмщик и владелец мгновенно получают уведомление с именем и номером клиента.</div>
-      </div>
+  <div style="font-size: 22px; margin-bottom: 8px;">📞</div>
+  <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">/call · /callback</div>
+  <div style="font-size: 13px; color: var(--label2);">Клиент запрашивает обратный звонок. Приёмщик и владелец мгновенно получают уведомление с именем и номером клиента.</div>
+</div>
       <div class="role-card" style="padding: 16px 20px;">
-        <div style="font-size: 22px; margin-bottom: 8px;">📋</div>
-        <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">/status</div>
-        <div style="font-size: 13px; color: var(--label2);">Клиент может в любой момент узнать текущий статус своей заявки, не обращаясь к сотрудникам.</div>
-      </div>
+  <div style="font-size: 22px; margin-bottom: 8px;">📋</div>
+  <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">/status</div>
+  <div style="font-size: 13px; color: var(--label2);">Клиент может в любой момент узнать текущий статус своей заявки, не обращаясь к сотрудникам.</div>
+</div>
       <div class="role-card" style="padding: 16px 20px;">
-        <div style="font-size: 22px; margin-bottom: 8px;">🔔</div>
-        <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">Push-уведомления</div>
-        <div style="font-size: 13px; color: var(--label2);">При поступлении новой заявки или вопроса от клиента сотрудники получают push-уведомление прямо в приложении.</div>
-      </div>
+  <div style="font-size: 22px; margin-bottom: 8px;">🔔</div>
+  <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">Push-уведомления</div>
+  <div style="font-size: 13px; color: var(--label2);">При поступлении новой заявки или вопроса от клиента сотрудники получают push-уведомление прямо в приложении.</div>
+</div>
       <div class="role-card" style="padding: 16px 20px;">
-        <div style="font-size: 22px; margin-bottom: 8px;">🕐</div>
-        <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">Напоминания о визите</div>
-        <div style="font-size: 13px; color: var(--label2);">Бот автоматически напоминает клиентам о предстоящем визите. Работает только для заявок в статусе «Подтверждена».</div>
-      </div>
+  <div style="font-size: 22px; margin-bottom: 8px;">🕐</div>
+  <div style="font-size: 14px; font-weight: 600; margin-bottom: 6px;">Напоминания о визите</div>
+  <div style="font-size: 13px; color: var(--label2);">Бот автоматически напоминает клиентам о предстоящем визите. Работает только для заявок в статусе «Подтверждена».</div>
+</div>
     </div>
   </div>
-
 </section>
 
-<!-- ORDER STATUSES -->
 <section id="statuses">
   <div class="section-label">Заявки</div>
   <div class="section-title">Статусы заявки</div>
@@ -714,10 +687,8 @@
       </tbody>
     </table>
   </div>
-
 </section>
 
-<!-- FAQ -->
 <section id="faq">
   <div class="section-label">FAQ</div>
   <div class="section-title">Частые вопросы</div>
@@ -726,8 +697,9 @@
     <summary>Как получить доступ к GarageOS?</summary>
     <div class="faq-body">
       <p><strong>Если вы владелец сервиса:</strong> скачайте приложение из App Store, введите email — придёт письмо с кодом подтверждения. Введите код, установите пароль и настройте сервис.</p>
-      <p><strong>Если вы мастер или приёмщик:</strong> владелец добавляет вас по email в разделе «Персонал». Вы получите письмо с 6-значным кодом. Откройте приложение, введите email, затем код — и установите пароль.</p>
-      <p>По любым вопросам пишите на <a href="mailto:support@kolomeitsevs.com">support@kolomeitsevs.com</a>.</p>
+<p><strong>Если вы мастер или приёмщик:</strong> владелец добавляет вас по email в разделе «Персонал». Вы получите письмо с 6-значным кодом. Откройте приложение, введите email, затем код — и установите пароль.</p>
+<p>По любым вопросам пишите на <a href="mailto:support@kolomeitsevs.com">support@kolomeitsevs.com</a>.</p>
+
     </div>
   </details>
 
@@ -735,6 +707,7 @@
     <summary>Почему приложение только в тёмной теме?</summary>
     <div class="faq-body">
       <p>Тёмная тема — осознанное дизайн-решение для профессионального инструмента, который используется в условиях автосервиса: при разном освещении, с рабочими руками. Светлая тема не поддерживается.</p>
+
     </div>
   </details>
 
@@ -742,7 +715,8 @@
     <summary>Как добавить нового сотрудника?</summary>
     <div class="faq-body">
       <p>Войдите как Владелец → раздел «Персонал» → «Добавить». Укажите имя, email и роль сотрудника. Система автоматически отправит ему письмо с 6-значным кодом для первого входа.</p>
-      <p>Сотрудник устанавливает GarageOS, вводит email, затем код из письма и устанавливает свой пароль. Код действует 15 минут.</p>
+<p>Сотрудник устанавливает GarageOS, вводит email, затем код из письма и устанавливает свой пароль. Код действует 15 минут.</p>
+
     </div>
   </details>
 
@@ -750,6 +724,7 @@
     <summary>Срок кода подтверждения истёк — что делать?</summary>
     <div class="faq-body">
       <p>Если 15 минут прошло, сотрудник просто снова открывает приложение и вводит свой email — система автоматически вышлет новый код на ту же почту.</p>
+
     </div>
   </details>
 
@@ -757,6 +732,7 @@
     <summary>Кто может назначить мастера на заявку?</summary>
     <div class="faq-body">
       <p>Назначить или переназначить мастера могут <strong>владелец</strong> и <strong>приёмщик</strong>. Мастер видит только уже назначенные ему заявки.</p>
+
     </div>
   </details>
 
@@ -764,6 +740,7 @@
     <summary>Можно ли изменить роль сотрудника?</summary>
     <div class="faq-body">
       <p>Чтобы изменить роль, владелец деактивирует текущий аккаунт сотрудника в разделе «Персонал» и добавляет его заново с новой ролью на тот же или другой email.</p>
+
     </div>
   </details>
 
@@ -771,6 +748,7 @@
     <summary>Мастер видит данные клиентов?</summary>
     <div class="faq-body">
       <p>Нет. Роль «Мастер» не имеет доступа к имени и телефону клиента. Мастер видит только описание работ, автомобиль и статус заявки, назначенной ему.</p>
+
     </div>
   </details>
 
@@ -778,6 +756,7 @@
     <summary>Как работает программа лояльности?</summary>
     <div class="faq-body">
       <p>Владелец настраивает правила начисления и списания бонусных баллов в разделе «Лояльность». Приёмщик может просматривать баланс клиента. При закрытии заявки можно применить скидку за счёт баллов.</p>
+
     </div>
   </details>
 
@@ -785,6 +764,7 @@
     <summary>Что такое напоминания?</summary>
     <div class="faq-body">
       <p>Владелец может настраивать автоматические напоминания клиентам: о плановом ТО, сезонной замене резины и других сервисных событиях. Напоминания отправляются через Telegram-бот сервиса.</p>
+
     </div>
   </details>
 
@@ -792,7 +772,8 @@
     <summary>Что значит «На согласовании» у дополнительных работ?</summary>
     <div class="faq-body">
       <p>«На согласовании» — это статус <strong>отдельной дополнительной работы</strong>, а не всей заявки. Когда мастер обнаруживает доп. работы, он добавляет их с ценами — каждая уходит клиенту на согласование через бот. Клиент получает список с кнопками <strong>✅ Подтвердить / ❌ Отклонить</strong>.</p>
-      <p>Сама заявка при этом <strong>остаётся в статусе «В работе»</strong> — работа не останавливается, просто отдельные позиции ждут ответа клиента.</p>
+<p>Сама заявка при этом <strong>остаётся в статусе «В работе»</strong> — работа не останавливается, просто отдельные позиции ждут ответа клиента.</p>
+
     </div>
   </details>
 
@@ -800,8 +781,9 @@
     <summary>Что такое статус «Проверка»?</summary>
     <div class="faq-body">
       <p>Когда мастер завершил все работы, он переводит заявку в «Проверку». На этом этапе приёмщик осматривает результат <strong>до того</strong>, как клиенту сообщают о готовности автомобиля.</p>
-      <p>Если обнаружены недочёты — приёмщик возвращает заявку мастеру обратно в «В работе». Если всё в порядке — переводит в «Готова», и клиент получает уведомление о том, что автомобиль готов к выдаче.</p>
-      <p>Клиент на этапе «Проверка» никаких уведомлений не получает.</p>
+<p>Если обнаружены недочёты — приёмщик возвращает заявку мастеру обратно в «В работе». Если всё в порядке — переводит в «Готова», и клиент получает уведомление о том, что автомобиль готов к выдаче.</p>
+<p>Клиент на этапе «Проверка» никаких уведомлений не получает.</p>
+
     </div>
   </details>
 
@@ -809,7 +791,8 @@
     <summary>Клиент получает уведомления о статусе заявки автоматически?</summary>
     <div class="faq-body">
       <p>Да, автоматически — при каждом ключевом переходе статуса клиенту приходит сообщение в Telegram-бот без участия сотрудников: когда автомобиль принят, когда обнаружены доп. работы на согласование, когда работы выполнены и когда заявка закрыта.</p>
-      <p>В уведомлениях используется внутренний номер заявки в формате <strong>#0001</strong> — нумерация ведётся отдельно для каждого сервиса, начиная с первой заявки.</p>
+<p>В уведомлениях используется внутренний номер заявки в формате <strong>#0001</strong> — нумерация ведётся отдельно для каждого сервиса, начиная с первой заявки.</p>
+
     </div>
   </details>
 
@@ -817,7 +800,8 @@
     <summary>Как клиент может запросить обратный звонок?</summary>
     <div class="faq-body">
       <p><strong>/call</strong> — показывает клиенту кнопки для прямого звонка (сотовая и Telegram), если в настройках указан телефон приёмщика. Одновременно приёмщик получает уведомление в Telegram.</p>
-      <p><strong>/callback</strong> — отправляет приёмщику и владельцу запрос с именем и телефоном клиента: action-карточку в разделе «Диалоги» приложения и сообщение в Telegram. Клиент получает подтверждение «приёмщик перезвонит в ближайшее время».</p>
+<p><strong>/callback</strong> — отправляет приёмщику и владельцу запрос с именем и телефоном клиента: action-карточку в разделе «Диалоги» приложения и сообщение в Telegram. Клиент получает подтверждение «приёмщик перезвонит в ближайшее время».</p>
+
     </div>
   </details>
 
@@ -825,7 +809,8 @@
     <summary>Где в приложении видеть переписку с клиентами и отвечать им?</summary>
     <div class="faq-body">
       <p>Раздел <strong>«Диалоги»</strong> — все чаты с клиентами в реальном времени. Новый диалог появляется с первого сообщения клиента в боте.</p>
-      <p>По умолчанию на вопросы отвечает ИИ-ассистент. Как только приёмщик или владелец пишет в диалоге сам — ИИ отключается. Вернуть автоответ можно кнопкой «Вернуть боту» в том же диалоге.</p>
+<p>По умолчанию на вопросы отвечает ИИ-ассистент. Как только приёмщик или владелец пишет в диалоге сам — ИИ отключается. Вернуть автоответ можно кнопкой «Вернуть боту» в том же диалоге.</p>
+
     </div>
   </details>
 
@@ -833,6 +818,7 @@
     <summary>Что если ИИ не знает ответ на вопрос клиента?</summary>
     <div class="faq-body">
       <p>Если вопрос выходит за рамки базы знаний, бот пересылает его приёмщику и владельцу с кнопкой «Ответить». Приёмщик вводит ответ прямо в Telegram — клиент получает его автоматически.</p>
+
     </div>
   </details>
 
@@ -840,6 +826,7 @@
     <summary>На каких устройствах работает приложение?</summary>
     <div class="faq-body">
       <p>GarageOS работает на iPhone с iOS 16 и выше. Поддержка iPad в планах для следующих версий.</p>
+
     </div>
   </details>
 
@@ -847,6 +834,7 @@
     <summary>Как оформляется подписка?</summary>
     <div class="faq-body">
       <p>Новый владелец получает бесплатный пробный период после регистрации. По его окончании доступ оформляется через Apple In-App Purchases прямо в приложении. По вопросам корпоративного доступа пишите на <a href="mailto:support@kolomeitsevs.com">support@kolomeitsevs.com</a>.</p>
+
     </div>
   </details>
 
@@ -854,12 +842,11 @@
     <summary>Как связаться с поддержкой?</summary>
     <div class="faq-body">
       <p>Напишите на <a href="mailto:support@kolomeitsevs.com">support@kolomeitsevs.com</a>. Отвечаем в рабочие дни в течение 24 часов.</p>
+
     </div>
   </details>
-
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-label">Помощь</div>
   <div class="section-title">Связаться с нами</div>
