@@ -1,10 +1,12 @@
 # garageos-web
 
-Статичный сайт поддержки **GarageOS** на GitHub Pages — [support.kolomeitsevs.com](https://support.kolomeitsevs.com).
+Статичный сайт поддержки **GarageOS** — [support.kolomeitsevs.com](https://support.kolomeitsevs.com).
+
+Хостинг: **Cloudflare Pages**, сборка автоматически на каждый push в `main`.
 
 ## Структура
 
-```
+```text
 content/
   _config.json     — общие настройки (title, footer, support email)
   00-hero.md       — hero-блок
@@ -15,25 +17,38 @@ content/
   50-faq.md        — частые вопросы
   60-contact.md    — контакты
 templates/
-  shell.html       — каркас страницы (стили + nav + footer)
-build.js           — генератор index.html
-index.html         — сгенерированный файл (НЕ редактировать вручную)
+  shell.html       — каркас (стили + nav + footer)
+build.js           — генератор → dist/index.html
+dist/              — артефакт сборки (в .gitignore, деплоится Pages)
 ```
 
 ## Редактирование
 
 1. Правите файлы в `content/`.
 2. Коммитите в `main`.
-3. GitHub Action (`.github/workflows/build.yml`) автоматически перегенерирует `index.html` и закоммитит его в репозиторий.
+3. Cloudflare Pages автоматически запускает `npm run build` и публикует `dist/`.
 
-### Локальная сборка
+### Локальная сборка и предпросмотр
 
 ```bash
 npm install
-npm run build       # → index.html
+npm run build           # → dist/index.html
+
+# preview (любой статичный сервер)
+npx serve dist
+# или
+python3 -m http.server 8000 -d dist
 ```
 
-Откройте `index.html` в браузере для предпросмотра.
+## Cloudflare Pages — конфигурация
+
+При создании проекта в Cloudflare:
+
+- **Framework preset:** None
+- **Build command:** `npm run build`
+- **Build output directory:** `dist`
+- **Production branch:** `main`
+- **Root directory:** (пустой)
 
 ## Шаблоны секций
 

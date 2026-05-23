@@ -15,7 +15,8 @@ const { marked } = require('marked');
 const ROOT = __dirname;
 const CONTENT_DIR = path.join(ROOT, 'content');
 const TEMPLATES_DIR = path.join(ROOT, 'templates');
-const OUT_FILE = path.join(ROOT, 'index.html');
+const DIST_DIR = path.join(ROOT, 'dist');
+const STATIC_ASSETS = ['logo.png', '404.html'];
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -335,8 +336,18 @@ function main() {
     .replace('{{SECTIONS}}', sections.join('\n\n'))
     .replace('{{FOOTER}}', config.footer.html);
 
-  fs.writeFileSync(OUT_FILE, out, 'utf8');
-  console.log(`✓ Built ${OUT_FILE} (${out.length} bytes, ${files.length} sections)`);
+  fs.mkdirSync(DIST_DIR, { recursive: true });
+  const outFile = path.join(DIST_DIR, 'index.html');
+  fs.writeFileSync(outFile, out, 'utf8');
+
+  for (const asset of STATIC_ASSETS) {
+    const src = path.join(ROOT, asset);
+    if (fs.existsSync(src)) {
+      fs.copyFileSync(src, path.join(DIST_DIR, asset));
+    }
+  }
+
+  console.log(`✓ Built ${outFile} (${out.length} bytes, ${files.length} sections)`);
 }
 
 main();
