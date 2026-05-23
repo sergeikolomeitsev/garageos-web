@@ -1,0 +1,9 @@
+{
+  "title": "GarageOS — Поддержка",
+  "description": "Поддержка и руководство пользователя для GarageOS — профессиональной системы управления автосервисом.",
+  "version_badge": "📱 Версия 1.0 · iOS",
+  "support_email": "support@kolomeitsevs.com",
+  "footer": {
+    "html": "© 2026 GarageOS &nbsp;·&nbsp; <a href=\"/privacy\">Политика конфиденциальности</a> &nbsp;·&nbsp; <a href=\"/terms\">Условия использования</a>"
+  }
+}
